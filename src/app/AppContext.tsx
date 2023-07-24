@@ -1,6 +1,7 @@
-import axios from 'axios'
+
 import React,{useEffect,useState,useContext, ReactNode} from 'react'
 import { IFilmes,IProps } from '@/interfaces';
+import { popularMovies } from '@/Api';
 
 const initialData: IFilmes = {
   results: Array(20).fill({ backdrop_path: "" ,original_title:"",overview:"",release_date:"",id:0,poster_path:""
@@ -15,12 +16,10 @@ export default function AppContext({children}:IProps) {
   
   useEffect(() => {
     async function api_call() {
-      const key_api = process.env.NEXT_PUBLIC_KEY_DB;
-      const response = await axios.get<IFilmes>(`https://api.themoviedb.org/3/movie/popular?api_key=${key_api}`);
-      const data = response.data;
+      const data = await popularMovies();
       setData(data);
       setMostrar(true)
-    } 
+    }
     api_call() 
   }, []);
 

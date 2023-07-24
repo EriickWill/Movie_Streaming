@@ -1,3 +1,4 @@
+import { Btn,AddWatchList } from '@/Components/Buttons';
 import { DiminuirTexto } from '@/Util/functions';
 import { GlobalContext } from '@/app/AppContext'
 import Link from 'next/link';
@@ -16,12 +17,12 @@ export default function Hero() {
 
     <section className='w-full max-w-screen min-h-screen h-full 'style={{background:`linear-gradient(rgb(13, 12, 15,0.5),rgb(13, 12, 15,1)),url(${Imagelink})center center/cover`}}>
       <div className=' min-h-screen z-10 text-zinc-50 flex flex-col justify-center  items-start containerAlign'>
-        <span>Movie</span>
-        <h1 className='mt-6 text-5xl'>{filmeHero.original_title}</h1>
+        <span className='bg-zinc-800 p-2 px-4 rounded-full text-xs'>Movie</span>
+        <h1 className='mt-6 text-5xl font-bold'>{filmeHero.original_title}</h1>
         <p className='min-w-80 w-2/4 mt-6'>{textoFormatado}</p>
         <div className="flex gap-5 mt-6">
-          <Link href="" className='bg-purple-600 w-48 h-12 font-semibold flex items-center justify-center rounded-xl'>Watch</Link>
-          <Link href="" className='bg-transparent border-2 w-48 h-12  font-semibold flex items-center justify-center rounded-xl'>Add Watchlist</Link>
+          <Btn text='Watch' link='' color='bg-purple-600' border=""/>
+          <AddWatchList link="" color="bg-transparent"/>
         </div>
       </div>
       

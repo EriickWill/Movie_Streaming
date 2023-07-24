@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root{
+  --swiper-navigation-size:20px;
+}
 body {
   background: #0D0C0F;
   width: 100%;
@@ -15,7 +17,15 @@ body {
   padding-inline: 2%;
   margin-inline:auto ;
 }
-.swiper-button-next::after,.swiper-button-prev::after{
-  color: purple;
-  right: 0;
+.swiper-button-next,.swiper-button-prev{
+  background: #0202028f;
+  
+  padding: 25px;
+  border-radius: 50%;
+
+}
+html .swiper-button-next:after,html .swiper-button-prev:after{
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  
 }

@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from 'react'
 import { GlobalContext } from '@/app/AppContext'
-import Card from './Card';
+import Card from '../../Card';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination,Navigation } from 'swiper/modules';
@@ -12,14 +12,14 @@ export default function PopularMovies() {
   const theContext = useContext(GlobalContext)
   const [popularFilms,setPopular] = useState<any>()
   const [mostrar,setMostrar] = useState(false)
-  useEffect(()=>{
-    setPopular(theContext.results)
-    setMostrar(true)
-  })
+    useEffect(()=>{
+      setPopular(theContext.results)
+      setMostrar(true)
+    })
 
   return (
     <section className='containerAlign'>
-      <h2>Just Release</h2>
+      <h2 className='mt-6 text-2xl my-6 font-semibold text-zinc-100'>Just Release</h2>
       <Swiper className='flex w-full  h-96 mySwiper'  slidesPerView={5}
         spaceBetween={10}
         centeredSlides={false}

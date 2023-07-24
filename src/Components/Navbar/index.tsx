@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function NavBar() {
@@ -14,8 +15,8 @@ export default function NavBar() {
             </ul>
 
             <div className='flex justify-center items-center gap-10'>
-              <button>Sign up</button>
-              <button>Login</button>
+              <Link href={""}>Sign up</Link>
+              <Link href={""}>Login</Link>
             </div>
         </nav>
     </header>

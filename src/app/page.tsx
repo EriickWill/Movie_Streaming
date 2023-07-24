@@ -1,9 +1,9 @@
 'use client'
 import NavBar from '@/Components/Navbar';
-import AppContext, { GlobalContext } from './AppContext';
+import AppContext from './AppContext';
 import Hero from '@/Components/home/Hero';
 import PopularMovies from '@/Components/home/PopularMovies';
-import { useContext } from 'react';
+import TopReted from '@/Components/home/TopRated';
 export default function Home() {
 
 
@@ -13,8 +13,8 @@ export default function Home() {
         <main className='w-full h-full'>
             <Hero/>
             <PopularMovies/>
+            <TopReted/>
         </main>
-        asidhasiohdasd
     </AppContext>
   );
 }
